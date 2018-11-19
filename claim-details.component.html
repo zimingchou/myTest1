@@ -1,0 +1,53 @@
+<form class="claim-details-container" [formGroup]="claimForm">
+  <div class="form-row claim-header">Claim <span class="lighter-font">&nbsp;- {{claim?.claimId}}</span></div>
+  <div class="form-row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Claim ID" [readonly]="true" formControlName="claimId">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Patient Name" [readonly]="true" formControlName="memberFullname">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Member Health Plan ID" [readonly]="true" formControlName="carrierMemId">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Subscriber Name" [readonly]="true" formControlName="subscriberFullname">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Subscriber ID" [readonly]="true" formControlName="insuredId">
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Provider Name (Pay-To)" [readonly]="true" formControlName="payToProviderFullname">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-4">
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="DOSFromPicker" formControlName="startDate" placeholder="DOS From" [readonly]="true">
+        <mat-datepicker-toggle matSuffix [for]="DOSFromPicker"></mat-datepicker-toggle>
+        <mat-datepicker #DOSFromPicker [disabled]="true"></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-4">
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="DOSToPicker" formControlName="endDate" placeholder="DOS To" [readonly]="true">
+        <mat-datepicker-toggle matSuffix [for]="DOSToPicker"></mat-datepicker-toggle>
+        <mat-datepicker #DOSToPicker [disabled]="true"></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
